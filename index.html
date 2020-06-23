@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>莫古力游行活动记录</title>
+    <meta charset="utf-8" />
+    <style>
+        button {
+            margin: 0px 4px;
+        }
+        div {
+            margin: 8px;
+        }
+    </style>
+    <script src="http://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script>
+        const data = [{
+            category: '24人本',
+            details: [{
+                item: '玛哈古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/c/c4/0a46eb8b4575734dbdde51148461a663bc3032e2.png/20px-0a46eb8b4575734dbdde51148461a663bc3032e2.png',
+                src: '魔航船 低保',
+                amount: 3,
+            }, {
+                item: '玛哈大古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/0/00/5d0bde6d0da34656557f792cf643e8172f685974.png/20px-5d0bde6d0da34656557f792cf643e8172f685974.png',
+                src: '玛哈 低保',
+                amount: 3,
+            }, {
+                item: '稀有玛哈古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/75/1fb3a0cc84ef57d50f58f5f61d6b8017164ea6bd.png/20px-1fb3a0cc84ef57d50f58f5f61d6b8017164ea6bd.png',
+                src: '影之国 低保',
+                amount: 3,
+            }, {
+                item: '拉巴纳斯塔古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/8/84/8d9edd043a0f9c93c7602279648f644317fbefa8.png/20px-8d9edd043a0f9c93c7602279648f644317fbefa8.png',
+                src: '失落之都 低保',
+                amount: 3,
+            }, {
+                item: '高古古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/71/65ef97569e4fdec8e5704a8d9ae8d388f7f818c6.png/20px-65ef97569e4fdec8e5704a8d9ae8d388f7f818c6.png',
+                src: '大灯塔 低保',
+                amount: 3,
+            }, {
+                item: '缪隆德古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/45/019996c0659d3baf1d229e737234a775dee520a2.png/20px-019996c0659d3baf1d229e737234a775dee520a2.png',
+                src: '僧院 低保',
+                amount: 3,
+            }, {
+                item: '机械古钱',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5d/9b5ab5fffdd33588ea882683bb149dbca54e9f2b.png/20px-9b5ab5fffdd33588ea882683bb149dbca54e9f2b.png',
+                src: '尼尔 低保',
+                amount: 3,
+            }],
+        }, {
+            category: '大型',
+            details: [{
+                item: '戈耳狄螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/0/0f/743649c1e39a532e2f998cd33881b25a0bd6ecab.png/20px-743649c1e39a532e2f998cd33881b25a0bd6ecab.png',
+                src: 'a1 a2 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/93/B520ffcd6222dab7bdfffc5654220779ab7f13c4.png/20px-B520ffcd6222dab7bdfffc5654220779ab7f13c4.png',
+                src: 'a1 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/1/1b/556b4dea018f8743673d84b2da53fd098d6a8a64.png/20px-556b4dea018f8743673d84b2da53fd098d6a8a64.png',
+                src: 'a1 a2 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/ea/6b97c3edf271d564dcf479b0b9fb03802c6e5886.png/20px-6b97c3edf271d564dcf479b0b9fb03802c6e5886.png',
+                src: 'a3 a4 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5d/6b1cb9c6c42ccb613a6393a678838d726bf5173b.png/20px-6b1cb9c6c42ccb613a6393a678838d726bf5173b.png',
+                src: 'a3 a4 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/ee/E6643afbfa5fb081049d83eb99c95c0e85d7fc36.png/20px-E6643afbfa5fb081049d83eb99c95c0e85d7fc36.png',
+                src: 'a4 roll点',
+                amount: 1,
+            }, {
+                item: '戈耳狄透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/e5/Fad0ab94c038fb963a919f62fbff635d8263e7b4.png/20px-Fad0ab94c038fb963a919f62fbff635d8263e7b4.png',
+                src: 'a2 a3 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/43/B3c14aae27bcbe8ec5c4b40bd01bbc33ecea705e.png/20px-B3c14aae27bcbe8ec5c4b40bd01bbc33ecea705e.png',
+                src: 'a5 a6 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/9d/6f96f8ca21c3a78c1d9c36cf141f2e1a116d196e.png/20px-6f96f8ca21c3a78c1d9c36cf141f2e1a116d196e.png',
+                src: 'a5 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/8/8c/A1f7cbcf2226e0e9ab2d160d72c039e88d3a4f7c.png/20px-A1f7cbcf2226e0e9ab2d160d72c039e88d3a4f7c.png',
+                src: 'a5 a6 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/a/a9/0bcafb4d080b44f3a1ada1f3682392efd29efc92.png/20px-0bcafb4d080b44f3a1ada1f3682392efd29efc92.png',
+                src: 'a7 a8 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/3/3a/0c094d240970fa4fd0a9d8afb8ad03d1630b214c.png/20px-0c094d240970fa4fd0a9d8afb8ad03d1630b214c.png',
+                src: 'a7 a8 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/d/d9/9229d5180023c1f29644eb2aa84319369ac37332.png/20px-9229d5180023c1f29644eb2aa84319369ac37332.png',
+                src: 'a8 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/e4/4488825697e19373f71d8779af8524d3bc0053f5.png/20px-4488825697e19373f71d8779af8524d3bc0053f5.png',
+                src: 'a6 a7 roll点',
+                amount: 1,
+            }, {
+                item: '弥达斯齿轮',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/3/32/6686b2ce5c2be07612cf04369a8b15ff91fe3621.png/20px-6686b2ce5c2be07612cf04369a8b15ff91fe3621.png',
+                src: 'a8 低保',
+                amount: 1,
+            }, {
+                item: '亚历山大螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/49/A0acb0ce94b705b67c87391b016cb381621b4ec3.png/20px-A0acb0ce94b705b67c87391b016cb381621b4ec3.png',
+                src: 'a9 a10 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/4f/4232f8ecbaf6098ec1d17431e436e2e76795254d.png/20px-4232f8ecbaf6098ec1d17431e436e2e76795254d.png',
+                src: 'a9 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/d/d0/388ece02b318a68835512f05b27e541a3ed82723.png/20px-388ece02b318a68835512f05b27e541a3ed82723.png',
+                src: 'a9 a10 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/f/fb/7905469f72e0bfd59c9028bbeafd96bf5d99a89e.png/20px-7905469f72e0bfd59c9028bbeafd96bf5d99a89e.png',
+                src: 'a11 a12 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/53/73c6643221c2e4cf1fe7ab622124da895efc5be5.png/20px-73c6643221c2e4cf1fe7ab622124da895efc5be5.png',
+                src: 'a11 a12 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/9a/0e37f2afa51006ac8840b77e211ecfffe096d885.png/20px-0e37f2afa51006ac8840b77e211ecfffe096d885.png',
+                src: 'a12 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/1/13/382be0fe870c6da34508c2dbbf5f0396b68acba5.png/20px-382be0fe870c6da34508c2dbbf5f0396b68acba5.png',
+                src: 'a10 a11 roll点',
+                amount: 1,
+            }, {
+                item: '亚历山大齿轮',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/a/a6/417e68d0308345ffe0f277dda7d07674df8dde5a.png/20px-417e68d0308345ffe0f277dda7d07674df8dde5a.png',
+                src: 'a12 低保',
+                amount: 1,
+            }, {
+                item: '德尔塔螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/76/Ffb2554ba072d353d9d14cb8bc4fdf72aaf3e670.png/20px-Ffb2554ba072d353d9d14cb8bc4fdf72aaf3e670.png',
+                src: 'o1 o2 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/91/9bd3ee1b88ee84abdfee8e82bdc902b69d6176a1.png/20px-9bd3ee1b88ee84abdfee8e82bdc902b69d6176a1.png',
+                src: 'o1 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/96/3597d62552a10be7df20392bdcc16826a74d1fb7.png/20px-3597d62552a10be7df20392bdcc16826a74d1fb7.png',
+                src: 'o1 o2 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/0/0a/E009b5022a8550eff66db4a41463b92239e3d6c6.png/20px-E009b5022a8550eff66db4a41463b92239e3d6c6.png',
+                src: 'o3 o4 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/0/03/Ac5eee082095a46379a039cc5b5e5b51c40b9ca1.png/20px-Ac5eee082095a46379a039cc5b5e5b51c40b9ca1.png',
+                src: 'o3 o4 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/b/b3/5c275e2384e64ebcba3d84820eb48a8cd5e53e8c.png/20px-5c275e2384e64ebcba3d84820eb48a8cd5e53e8c.png',
+                src: 'o4 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/8/8d/865fbb377ed304dfdbcdcead08960e6c8efde18c.png/20px-865fbb377ed304dfdbcdcead08960e6c8efde18c.png',
+                src: 'o2 o3 roll点',
+                amount: 1,
+            }, {
+                item: '德尔塔幻晶',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/1/1f/Cde593ab9a0d1719192bf6280025fd8e029de541.png/20px-Cde593ab9a0d1719192bf6280025fd8e029de541.png',
+                src: 'o4 低保',
+                amount: 1,
+            }, {
+                item: '西格玛螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/e2/086734a753f4565b7a167bcd73e533092ff70aa0.png/20px-086734a753f4565b7a167bcd73e533092ff70aa0.png',
+                src: 'o5 o6 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/1/13/Ce598c4b5657caa6701f098539903aa3fc236bb0.png/20px-Ce598c4b5657caa6701f098539903aa3fc236bb0.png',
+                src: 'o5 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/0/0b/0d30c963c358a91838e0534419a48411e6a5b0a6.png/20px-0d30c963c358a91838e0534419a48411e6a5b0a6.png',
+                src: 'o5 o6 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5e/6681624f30096bd2e5e589e724e1895bbd2bad29.png/20px-6681624f30096bd2e5e589e724e1895bbd2bad29.png',
+                src: 'o7 o8 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/d/d0/7b69df114a3ccc785a7206558786d99471e2bddd.png/20px-7b69df114a3ccc785a7206558786d99471e2bddd.png',
+                src: 'o7 o8 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/ee/E6643afbfa5fb081049d83eb99c95c0e85d7fc36.png/20px-E6643afbfa5fb081049d83eb99c95c0e85d7fc36.png',
+                src: 'o8 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/f/ff/A143886330c3a538a3b8eb3515d7432031dbf473.png/20px-A143886330c3a538a3b8eb3515d7432031dbf473.png',
+                src: 'o6 o7 roll点',
+                amount: 1,
+            }, {
+                item: '西格玛幻晶',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/c/c8/681c9415396031a583d1c46855337e9717106671.png/20px-681c9415396031a583d1c46855337e9717106671.png',
+                src: 'o8 低保',
+                amount: 1,
+            }, {
+                item: '阿尔法螺栓',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/b/be/A8b40ee0935959d7aa9a1bd8be5ae2ec4c0cb637.png/20px-A8b40ee0935959d7aa9a1bd8be5ae2ec4c0cb637.png',
+                src: 'o9 o10 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法锁链',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/8/8a/1acc655578b52267e25321b66f3b9803d2674b58.png/20px-1acc655578b52267e25321b66f3b9803d2674b58.png',
+                src: 'o9 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法踏板',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/75/A3246fd065a060c27c2f8b5d269bf2c56ed962ec.png/20px-A3246fd065a060c27c2f8b5d269bf2c56ed962ec.png',
+                src: 'o9 o10 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法弹簧',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/ea/A0f3c098ec20a457d1db58198cabd9e6c63b0b5f.png/20px-A0f3c098ec20a457d1db58198cabd9e6c63b0b5f.png',
+                src: 'o11 o12 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法曲柄',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/56/A9dad8d3f2925cda3d8284150743ab5e75e72255.png/20px-A9dad8d3f2925cda3d8284150743ab5e75e72255.png',
+                src: 'o11 o12 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法长杆',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/42/0b5eb6fe4e9e1b0ff3997733d02724352f5038e8.png/20px-0b5eb6fe4e9e1b0ff3997733d02724352f5038e8.png',
+                src: 'o12 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法透镜',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/4/47/0810022bc39087ccc8884c5262c30da87081436a.png/20px-0810022bc39087ccc8884c5262c30da87081436a.png',
+                src: 'o10 o11 roll点',
+                amount: 1,
+            }, {
+                item: '阿尔法幻晶',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/71/B15d7896a718349dda51bf3113a264eaae4be2fb.png/20px-B15d7896a718349dda51bf3113a264eaae4be2fb.png',
+                src: 'o12 低保',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒饰品',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/a/ad/A0bd231f7ba2973fd64dca47f60814211e022a57.png/20px-A0bd231f7ba2973fd64dca47f60814211e022a57.png',
+                src: 'e1 e2 e3 e4 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒腰带',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/c/cb/20ace6f3c65d13fcca86a27fdc35929b5c050f1d.png/20px-20ace6f3c65d13fcca86a27fdc35929b5c050f1d.png',
+                src: 'e1 e2 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒锁甲靴',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/6/67/Ceac63b4ef5b5ad1170cbd901313bf0f667caa2e.png/20px-Ceac63b4ef5b5ad1170cbd901313bf0f667caa2e.png',
+                src: 'e1 e2 e4 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒长裤',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/77/6eb82d0ae3d01c9c5ac050ff03c903d29dd1bff7.png/20px-6eb82d0ae3d01c9c5ac050ff03c903d29dd1bff7.png',
+                src: 'e1 e2 e3 e4 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒手铠',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/f/fb/1e0485ed8b6df20e9ebe6764a53762237e75830d.png/20px-1e0485ed8b6df20e9ebe6764a53762237e75830d.png',
+                src: 'e2 e3 e4 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒铠甲',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5a/126ca8331a55b62d1f5c75d007f98f610f00d090.png/20px-126ca8331a55b62d1f5c75d007f98f610f00d090.png',
+                src: 'e1 e2 e3 e4 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒头盔',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/c/c7/Bd9b4c9cb205b8e86de9198bcea522d3ef391d90.png/20px-Bd9b4c9cb205b8e86de9198bcea522d3ef391d90.png',
+                src: 'e1 e2 e3 roll点',
+                amount: 1,
+            }, {
+                item: '古旧的觉醒长剑',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/c/c4/D5680c7b94032c65cd399ad914da6bff10a3c7b4.png/20px-D5680c7b94032c65cd399ad914da6bff10a3c7b4.png',
+                src: 'e4 低保',
+                amount: 1,
+            }],
+        }, {
+            category: '极神',
+            details: [{
+                item: '云神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极云神 低保',
+                amount: 1,
+            }, {
+                item: '武神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极武神 低保',
+                amount: 1,
+            }, {
+                item: '苍穹甲胄碎片',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/3/38/02e115e5f9e5ada086cb638847d76999890daa36.png/20px-02e115e5f9e5ada086cb638847d76999890daa36.png',
+                src: '极骑神 低保',
+                amount: 1,
+            }, {
+                item: '邪龙图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极邪龙 低保',
+                amount: 1,
+            }, {
+                item: '魔神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极魔神 低保',
+                amount: 1,
+            }, {
+                item: '女神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极女神 低保',
+                amount: 1,
+            }, {
+                item: '鬼神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/47433d6416c481de23d70b5a5b8a4aef0288d799.png/20px-47433d6416c481de23d70b5a5b8a4aef0288d799.png',
+                src: '极鬼神 低保',
+                amount: 1,
+            }, {
+                item: '豪神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/6/6f/4b5613995dad28db0d20c9b25faa4ea337b63e73.png/20px-4b5613995dad28db0d20c9b25faa4ea337b63e73.png',
+                src: '极豪神 低保',
+                amount: 1,
+            }, {
+                item: '美神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/b/b1/Ccd4a522ff2e7570abd5bc534bf1be14b3cb9c2b.png/20px-Ccd4a522ff2e7570abd5bc534bf1be14b3cb9c2b.png',
+                src: '极美神 低保',
+                amount: 1,
+            }, {
+                item: '神龙图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/e6/7f4ab9ae5fd29171454e2b99a9a2c3c975050ab0.png/20px-7f4ab9ae5fd29171454e2b99a9a2c3c975050ab0.png',
+                src: '极神龙 低保',
+                amount: 1,
+            }, {
+                item: '夜神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/1/16/Cac2c87b85fd08e5f7d03e1ff56c15508c4922da.png/20px-Cac2c87b85fd08e5f7d03e1ff56c15508c4922da.png',
+                src: '极月读 低保',
+                amount: 1,
+            }, {
+                item: '白虎图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/f/f5/0a9103f21bcd472e9c60371ac9ec7d5598741ead.png/20px-0a9103f21bcd472e9c60371ac9ec7d5598741ead.png',
+                src: '极白虎 低保',
+                amount: 1,
+            }, {
+                item: '朱雀图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/3/3f/225664e7c5cbc8909c8c19b5b4c35fb30647d20f.png/20px-225664e7c5cbc8909c8c19b5b4c35fb30647d20f.png',
+                src: '极朱雀 低保',
+                amount: 1,
+            }, {
+                item: '青龙图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/5/5f/2545aeae2648a0165c623b591a77d2b8bea0157b.png/20px-2545aeae2648a0165c623b591a77d2b8bea0157b.png',
+                src: '极青龙 低保',
+                amount: 1,
+            }, {
+                item: '妖灵王图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/9/95/8ed02ee685d72b4a973d72bf684d5b6e97a1411e.png/20px-8ed02ee685d72b4a973d72bf684d5b6e97a1411e.png',
+                src: '极妖灵王 低保',
+                amount: 1,
+            }, {
+                item: '完美神图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/7/71/Ba72293d81c27889298e20c1b6811210bd3c33e2.png/20px-Ba72293d81c27889298e20c1b6811210bd3c33e2.png',
+                src: '极肥宅 低保',
+                amount: 1,
+            }, {
+                item: '冥王图腾',
+                img: 'https://huiji-thumb.huijistatic.com/ff14/uploads/thumb/e/e4/9a089c47b3edb91d1831df3ffb5dbee214725a15.png/20px-9a089c47b3edb91d1831df3ffb5dbee214725a15.png',
+                src: '极哈 低保',
+                amount: 1,
+            }],
+        }, {
+            category: '其它',
+            details: [{
+                item: '--',
+                img: '',
+                src: '上交收藏品x10',
+                amount: 1,
+            }, {
+                item: '--',
+                img: '',
+                src: '战场',
+                amount: 1,
+            }, {
+                item: '天之陶器碎片',
+                img: '',
+                src: '天宫30层、铜宝箱小概率',
+                amount: 1,
+            }, {
+                item: '格尔莫拉陶器碎片',
+                img: '',
+                src: '死宫50层、100层、铜宝箱小概率',
+                amount: 3,
+            }],
+        }];
+        let records, cnt = 0;
+        function init() {
+            if (!localStorage.records) localStorage.records = '[]';
+            try {
+                records = JSON.parse(localStorage.records);
+            } catch (e) {
+                records = [];
+            }
+            for (let i in data) {
+                let ele = document.createElement('button');
+                ele.innerText = data[i].category;
+                ele.onclick = () => show(i);
+                $('#selectors').append(ele);
+            }
+            for (let i in data) {
+                let table = document.createElement('table');
+                let thead = table.createTHead();
+                thead.innerHTML = `<tr><th colspan="4">${data[i].category}</th></tr><tr><th>物品</th><th>来源</th><th>水晶数量</th><th>已达成</th></tr>`;
+                let tbody = table.createTBody();
+                for (let j in data[i].details) {
+                    let row = tbody.insertRow();
+                    row.innerHTML = `<td><img src="${data[i].details[j].img}"/>${data[i].details[j].item}</td><td>${data[i].details[j].src}</td><td>${data[i].details[j].amount}</td>`;
+                    let cell = row.insertCell();
+                    let input = document.createElement('input');
+                    input.type = 'checkbox';
+                    cell.appendChild(input);
+                    if (records[i] && records[i][j]) {
+                        input.checked = true;
+                        cnt += data[i].details[j].amount;
+                    }
+                    input.onclick = evt => {
+                        if (!records[i]) records[i] = [];
+                        records[i][j] = evt.target.checked;
+                        localStorage.records = JSON.stringify(records);
+                        cnt += data[i].details[j].amount * (evt.target.checked ? 1 : -1);
+                        updateProgress();
+                    }
+                }
+                if (i != 0) table.style.display = 'none';
+                table.border = '1';
+                table.classList = 'tab';
+                table.id = `tab${i}`;
+                $('#tabs').append(table);
+            }
+            updateProgress();
+        }
+        function show(tab) {
+            $('.tab').hide();
+            $(`#tab${tab}`).show();
+        }
+        function updateProgress() {
+            $('#current').text(cnt).css('color', cnt >= 50 ? 'green' : '');
+        }
+        function reset() {
+            records = [];
+            localStorage.records = '[]';
+            cnt = 0;
+            updateProgress();
+            $('input').prop('checked', false);
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <h4>莫古力游行活动记录</h4>
+    <div id="selectors"></div>
+    <div>当前进度：<span id="current" style="font-weight: bold;">0</span>/50 <button onclick="reset()">重置进度</button></div>
+    <div id="tabs"></div>
+    图源灰机wiki
+</body>
+
+</html>
